@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
+import sys
+sys.path.append("..")
+from scripts import preload
+
 import numpy as np
 import matplotlib.pyplot as plt
 import wave
+
+VERSION = 1.0
 
 def plot_waveform(audio_file):
     # オーディオファイルを読み込む
@@ -33,6 +39,10 @@ def plot_waveform(audio_file):
     plt.show()
 
 if __name__ == "__main__":
-    audio_file = 'audio.wav'  # オーディオファイルのパスを指定
+    args = preload.Args("Wave Form Plotter", version = VERSION, description = "Plot wave from audio file.")
+    args.parser.add_argument("input", metavar = "PATH")
+    arg = args.get()
+
+    audio_file = arg.input
     plot_waveform(audio_file)
 

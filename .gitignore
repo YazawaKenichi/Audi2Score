@@ -1,3 +1,9 @@
-venv
-*.wav
+freq2note.bat
+genwav.bat
+mono.bat
+output
+plotfft.bat
+plotwav.bat
+separate.bat
+venv/
 

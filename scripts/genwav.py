@@ -8,8 +8,6 @@ from scripts import preload
 import numpy as np
 import wave
 
-VERSION = 1.0
-
 def generate_sine_wave(freq, duration, sample_rate = 44100, amplitude = 32767):
     _amplitude = 32767 * amplitude
     # サンプル数を計算
@@ -29,6 +27,8 @@ def save_wav(filename, data, sample_rate=44100, num_channels=1, sample_width=2):
         wf.writeframes(data.tobytes())
 
 if __name__ == "__main__":
+    VERSION = 1.0
+
     args = preload.Args("GenWAV", version = VERSION, description = "Generate single wave audio file.")
     args.parser.add_argument("-f", "--freq", default = 440, dest = "freq", metavar = "FREQUENCY", type = float, help = "[float] Frequency of generat wave. Default : 440")
     args.parser.add_argument("-d", "--duration", default = 5, dest = "duration", metavar = "DURATION", type = float, help = "[float] Duration of generat wave. Default : 5; Unit : second")

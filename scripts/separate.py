@@ -6,8 +6,6 @@ sys.path.append("..")
 from scripts import preload
 import wave
 
-VERSION = 1.0
-
 def separate_channels(input_file, left_output_file, right_output_file):
     try:
         with wave.open(input_file, 'rb') as wave_file:
@@ -42,6 +40,8 @@ def separate_channels(input_file, left_output_file, right_output_file):
         print("Error:", str(e))
 
 if __name__ == "__main__":
+    VERSION = 1.0
+
     args = preload.Args("Wave Form Plotter", version = VERSION, description = "Plot wave from audio file with For FFT.")
     args.parser.add_argument("input", metavar = "PATH")
     arg = args.get()

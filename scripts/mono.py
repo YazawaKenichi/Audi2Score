@@ -9,8 +9,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import wave
 
-VERSION = 1.0
-
 def convert_to_mono(input_file, output_file):
     try:
         with wave.open(input_file, 'rb') as wave_file:
@@ -37,6 +35,8 @@ def convert_to_mono(input_file, output_file):
         print("Error:", str(e))
 
 if __name__ == "__main__":
+    VERSION = 1.0
+
     args = preload.Args("Wave Form Plotter", version = VERSION, description = "Plot wave from audio file with For FFT.")
     args.parser.add_argument("input", metavar = "PATH")
     arg = args.get()

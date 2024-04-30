@@ -8,8 +8,6 @@ from scripts import preload
 import math
 from numpy import sign
 
-VERSION = 1.0
-
 def frequency_to_note(x):
     # 基準音の設定
     A4 = 440.0
@@ -29,6 +27,8 @@ def frequency_to_note(x):
     return N[_in] + str(o)
 
 if __name__ == "__main__":
+    VERSION = 1.0
+
     args = preload.Args("Wave Form Plotter", version = VERSION, description = "Plot wave from audio file with For FFT.")
     args.parser.add_argument("freq", metavar = "FREQUENCY")
     arg = args.get()

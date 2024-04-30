@@ -9,8 +9,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import wave
 
-VERSION = 1.0
-
 def plot_waveform(audio_file):
     # オーディオファイルを読み込む
     with wave.open(audio_file, 'rb') as wf:
@@ -39,6 +37,8 @@ def plot_waveform(audio_file):
     plt.show()
 
 if __name__ == "__main__":
+    VERSION = 1.0
+
     args = preload.Args("Wave Form Plotter", version = VERSION, description = "Plot wave from audio file.")
     args.parser.add_argument("input", metavar = "PATH")
     arg = args.get()
